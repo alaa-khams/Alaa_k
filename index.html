@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For What Was — With Respect.</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F8F8F4;
+      margin: 0;
+      overflow-x: hidden;
+      overscroll-behavior: none;
+    }
+
+    .font-quote {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Welcome Section */
+    #welcome-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: #F8F8F4;
+      color: #333;
+      padding: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    #welcome-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    #welcome-section p {
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    /* Scroll Containers */
+    #scroll-container {
+      height: 400vh;
+      width: 100%;
+      position: relative;
+    }
+
+    #sticky-container {
+      height: 100vh;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      overflow: hidden;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    #horizontal-track {
+      display: flex;
+      height: 100%;
+      width: 400vw;
+      will-change: transform;
+    }
+
+    .section {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .quote-container {
+      position: absolute;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      will-change: opacity, transform;
+      left: 50%;
+      top: 55%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .quote-container {
+        top: 60%;
+        max-width: 85%;
+        font-size: 1.1rem;
+      }
+      #welcome-section h1 {
+        font-size: 1.8rem;
+      }
+      #welcome-section p {
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Bouquet as large background */
+    #bouquet-container {
+      position: fixed;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      height: 80vh;
+      opacity: 0.5;
+      z-index: 1;
+      pointer-events: none;
+      will-change: transform;
+    }
+
+    #bouquet-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    @media (max-width: 768px) {
+      #bouquet-container {
+        top: 38%;
+        width: 95vw;
+        height: 75vh;
+      }
+    }
+
+    /* Petals */
+    .petal {
+      position: fixed;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50% 0;
+      opacity: 0;
+      animation: drift 15s infinite linear;
+      z-index: 0;
+    }
+
+    @keyframes drift {
+      0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+    }
+
+    footer {
+      z-index: 10;
+    }
+    #quote-1 {
+  opacity: 0.2; /* partially visible before animation */
+  transform: translateY(10px);
+  transition: opacity 0.5s ease;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Welcome Page -->
+  <section id="welcome-section">
+    <h1>For What Was — With Respect</h1>
+    <p>A quiet reflection on endings, gratitude, and peace. Scroll to begin.</p>
+    <div class="mt-6 text-sm text-gray-500">↓ Scroll Down</div>
+  </section>
+
+  <!-- Floating petals -->
+  <div class="petal" style="width: 20px; height: 30px; left: 10%; animation-delay: 0s;"></div>
+  <div class="petal" style="width: 15px; height: 25px; left: 30%; animation-delay: 5s; background-color: rgba(255,253,230,0.5);"></div>
+  <div class="petal" style="width: 25px; height: 35px; left: 50%; animation-delay: 2s;"></div>
+  <div class="petal" style="width: 18px; height: 28px; left: 70%; animation-delay: 8s; background-color: rgba(255,230,232,0.5);"></div>
+  <div class="petal" style="width: 22px; height: 32px; left: 90%; animation-delay: 12s;"></div>
+
+  <!-- Bouquet background -->
+  <div id="bouquet-container">
+    <img id="bouquet-img" src="new111.png" alt="Bouquet">
+  </div>
+
+  <!-- Horizontal scroll content -->
+  <div id="scroll-container">
+    <div id="sticky-container">
+      <div id="horizontal-track">
+
+        <!-- Section 1 -->
+        <section class="section">
+          <div class="quote-container" id="quote-1">
+            <p class="font-quote text-2xl md:text-3xl text-gray-700">
+              “Some stories end quietly, not from lack of care, but because peace matters more than pride.”
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="section">
+          <div class="quote-container" id="quote-2">
+            <p class="font-quote text-2xl md:text-3xl text-yellow-900">
+              “I never meant to cause pain. Sometimes good intentions get lost between words and silence.”
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="section">
+          <div class="quote-container" id="quote-3">
+            <p class="font-quote text-2xl md:text-3xl text-pink-900">
+              “Thank you for being part of my days, for the lessons, the laughter, and what we shared.”
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="section">
+          <div class="quote-container" id="quote-4">
+            <p class="font-quote text-2xl md:text-3xl text-gray-600">
+              “Goodbye — with peace and without regret. May you find calm where my words once reached.”
+            </p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="fixed bottom-0 left-0 w-full p-4 text-center text-gray-500 text-sm opacity-0" id="footer">
+    Some endings are beginnings in disguise.
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const track = document.getElementById("horizontal-track");
+  const bouquetImg = document.getElementById("bouquet-img");
+  const quotes = [
+    document.getElementById("quote-1"),
+    document.getElementById("quote-2"),
+    document.getElementById("quote-3"),
+    document.getElementById("quote-4")
+  ];
+
+  // Horizontal scroll begins after the welcome section
+  gsap.to(track, {
+    x: () => -(track.scrollWidth - window.innerWidth),
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#scroll-container",
+      start: "top top+=100vh", // begins right after welcome section
+      end: "bottom bottom",
+      scrub: 1,
+      pin: "#sticky-container",
+      invalidateOnRefresh: true
+    }
+  });
+
+  // Unified timeline for all quote transitions
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#scroll-container",
+      start: "top top+=100vh",
+      end: "bottom bottom",
+      scrub: 1,
+    }
+  });
+
+  // 🌼 QUOTE 1 (Opening)
+  tl.to(quotes[0], { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 0)
+    .to(bouquetImg, { rotation: 0, scale: 1.05, opacity: 0.5, duration: 0.6, ease: "power2.out" }, 0)
+    .to("body", { backgroundColor: "#FFFDE7" }, 0)
+
+  // fade out quote-1 and fade in quote-2
+    .to(quotes[0], { opacity: 0, y: -20, duration: 0.6, ease: "power1.inOut" }, 1)
+    .to(quotes[1], { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 1)
+    .to(bouquetImg, { rotation: 90, scale: 1.1, duration: 0.6, ease: "power1.inOut" }, 1)
+    .to("body", { backgroundColor: "#FFF8DC" }, 1)
+
+  // 🌸 QUOTE 3 (Thank You)
+    .to(quotes[1], { opacity: 0, y: -20, duration: 0.6, ease: "power1.inOut" }, 2)
+    .to(quotes[2], { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 2)
+    .to(bouquetImg, { rotation: 180, scale: 1.1, duration: 0.6, ease: "power1.inOut" }, 2)
+    .to("body", { backgroundColor: "#FFF1F2" }, 2)
+
+  // 🌹 QUOTE 4 (Goodbye)
+    .to(quotes[2], { opacity: 0, y: -20, duration: 0.6, ease: "power1.inOut" }, 3)
+    .to(quotes[3], { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 3)
+    .to(bouquetImg, { rotation: 270, scale: 1.15, duration: 0.6, ease: "power1.inOut" }, 3)
+    .to("body", { backgroundColor: "#FFFFFF" }, 3)
+
+  // 🌷 FOOTER
+    .to("#footer", { opacity: 1 }, 3.5);
+</script>
+
+</body>
+</html>
